@@ -51,11 +51,11 @@ export default function App() {
       const payload = { title, content, tags };
 
       if (!selectedId) {
-        const res = await axios.post(`${API}/notes`, payload);
+        const res = axios.put(`${API}/notes/${selectedId}`, payload);
 
         setSelectedId(res.data.id)
       } else {
-        await axios.put(`${API}/notes/${selectedId}`, payload);
+        await await axios.post(`${API}/notes`, payload);
       }
 
       await fetchNotes();
@@ -125,7 +125,7 @@ export default function App() {
                   {n.updated_at ? new Date(n.updated_at).toLocaleString() : ""}
                 </div>
               </div>
-            ))}
+            ))}:
           </div>
         )}
       </div>
