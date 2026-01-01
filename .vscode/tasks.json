@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend (FastAPI)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "cd backend; .\\.venv\\Scripts\\Activate.ps1; py -m uvicorn main:app --reload --port 8000"
+      ],
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Frontend (Vite)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "cd frontend; npm run dev"
+      ],
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Dev: Start All",
+      "dependsOn": ["Backend (FastAPI)", "Frontend (Vite)"],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
