@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API = "http://localhost:8000";
+const API = "http://127.0.0.1:8000";
 
 export default function App() {
   const [title, setTitle] = useState("");
