@@ -35,7 +35,7 @@
         "-Command",
         "npm run dev"
       ],
-      
+
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": [],
       "isBackground": true,
